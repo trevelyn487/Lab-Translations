@@ -1,3 +1,5 @@
+# This translation is for the lab; Google Cloud Fundamentals: Getting Started with Compute Engine
+
 # Creating first VM with name my-vm-1
 gcloud compute instances create "my-vm-1" --zone=us-central1-a --machine-type "n1-standard-1" \
 --image=debian-9-stretch-v20200910 --image-project=debian-cloud \
