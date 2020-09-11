@@ -1,3 +1,5 @@
+# This translation is for Google Cloud Fundamentals: Getting Started with GKE
+
 # Making sure Kubernetes Engine API and Container Registry API are enabled
 gcloud services list
 
