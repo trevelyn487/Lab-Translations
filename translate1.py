@@ -1,17 +1,24 @@
 # This translation is for the lab; Google Cloud Fundamentals: Getting Started with Compute Engine
 
 # Creating first VM with name my-vm-1
-gcloud compute instances create "my-vm-1" --zone=us-central1-a --machine-type "n1-standard-1" \
---image=debian-9-stretch-v20200910 --image-project=debian-cloud \
+gcloud compute instances create "my-vm-1" \
+    --zone=us-central1-a \
+    --machine-type "n1-standard-1" \
+    --image "debian-9-stretch-v20200910" \
+    --image-project "debian-cloud" 
 
 # Creating firewall rule to allow http traffic to the VM
-gcloud compute --project=PROJECT_ID firewall-rules create "default-allow-http" \
+gcloud compute --project=PROJECT_ID firewall-rules create "allow-http" \
 --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 \
 --source-ranges=0.0.0.0/0 --target-tags=http-server
 
 # Creating second VM with name my-vm-2
-gcloud compute instances create "my-vm-2" --zone=us-central1-b --machine-type "n1-standard-1" \
---image-project "debian-cloud" --image "debian-9-stretch-v20190213" --subnet "default" \
+gcloud compute instances create "my-vm-2" \
+    --zone=us-central1-b \
+    --machine-type "n1-standard-1" \
+    --image-project "debian-cloud" \
+    --image "debian-9-stretch-v20190213" \
+    --subnet "default"
 
 # Connecting to second VM via SSH
 gcloud compute ssh --project PROJECT_ID --zone us-central1-b my-vm-2
