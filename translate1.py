@@ -14,7 +14,7 @@ gcloud compute instances create "my-vm-2" --zone=us-central1-b --machine-type "n
 --image-project "debian-cloud" --image "debian-9-stretch-v20190213" --subnet "default" \
 
 # Connecting to second VM via SSH
-gcloud compute --project PROJECT_ID --zone us-central1-b my-vm-2
+gcloud compute ssh --project PROJECT_ID --zone us-central1-b my-vm-2
 
 # Pinging the first VM
 ping my-vm-1
